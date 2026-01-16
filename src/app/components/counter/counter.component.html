@@ -1,0 +1,15 @@
+<div class="min-h-screen flex justify-center items-center w-full bg-blue-100">
+  <div class="bg-amber-100 p-4 rounded-2xl grid gap-2">
+    <input
+      type="number"
+      (input)="actualizarTexto($event)"
+      placeholder="ingresa un numero"
+      [value]="variable()"
+    />
+    <br />
+    <h2>El contador esta en: {{ counter() }}</h2>
+    <br />
+    <app-button variant="primary" class="w-full" (click)="handleAdd()">agregar</app-button>
+    <app-button variant="secondary" class="w-full" (click)="handleSubtract()">restar</app-button>
+  </div>
+</div>

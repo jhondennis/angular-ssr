@@ -1,0 +1,12 @@
+<div class="flex justify-center items-center min-h-screen">
+  <div class="flex flex-col gap-2">
+    <!-- Botón Primario (Default) -->
+    <app-button (btnClick)="onLogin()"> Entrar </app-button>
+
+    <!-- Botón Outline y Grande -->
+    <app-button variant="outline"> Registrarse </app-button>
+
+    <!-- Botón Deshabilitado -->
+    <app-button [disabled]="true" variant="ghost"> Olvidé mi contraseña </app-button>
+  </div>
+</div>
