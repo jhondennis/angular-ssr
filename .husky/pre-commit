@@ -1,0 +1,3 @@
+echo "[RUN LINTER] check eslint ..."
+bun run lint
+echo "[SUCCESS LINTER] successfuly"
