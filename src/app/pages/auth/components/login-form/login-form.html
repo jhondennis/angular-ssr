@@ -1,1 +1,43 @@
-<p>login-form works!</p>
+<form class="space-y-5 grid gap-1">
+  <app-input label="Correo electrónico" type="email" id="login-email"> </app-input>
+
+  <div class="space-y-1 grid gap-1">
+    <app-input label="Contraseña" type="password" id="login-password"> </app-input>
+    <div class="flex justify-end">
+      <a href="#" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline">
+        ¿Olvidaste tu contraseña?
+      </a>
+    </div>
+  </div>
+
+  <app-button class="w-full">
+    Iniciar Sesión
+    <svg
+      class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M13 7l5 5m0 0l-5 5m5-5H6"
+      />
+    </svg>
+  </app-button>
+
+  <div class="relative my-8">
+    <div class="absolute inset-0 flex items-center">
+      <div class="w-full border-t border-gray-200 dark:border-slate-800"></div>
+    </div>
+    <div class="relative flex justify-center text-sm">
+      <span class="px-2 bg-white dark:bg-slate-900 text-gray-500">O continuar con</span>
+    </div>
+  </div>
+
+  <app-button variant="outline" class="w-full grid gap-2">
+    <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5" alt="Google" />
+    Google
+  </app-button>
+</form>

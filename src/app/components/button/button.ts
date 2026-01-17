@@ -14,14 +14,22 @@ export class Button {
   size = input<ButtonSize>('md');
   disabled = input<boolean>(false);
   type = input<'button' | 'submit' | 'reset'>('button');
+  class = input<string>('');
 
   // Evento de salida
   btnClick = output<void>();
 
   // Helper para las clases de Tailwind
   get buttonClasses(): string {
-    const baseStyles =
-      'cursor-pointer inline-flex items-center justify-center rounded-md font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-95';
+    const baseStyles = [
+      'cursor-pointer inline-flex items-center',
+      'justify-center rounded-md font-medium',
+      'transition-all focus:outline-none focus:ring-2',
+      'focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-95',
+      this.class(),
+    ]
+      .filter(Boolean)
+      .join(' ');
 
     const variants = {
       primary: 'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500 shadow-sm',

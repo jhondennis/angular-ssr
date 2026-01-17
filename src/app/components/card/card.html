@@ -1,0 +1,25 @@
+<div
+  class="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-2xl overflow-hidden transition-all duration-300"
+  [class.shadow-sm]="!hover()"
+  [class.hover:shadow-xl]="hover()"
+  [class.hover:-translate-y-1]="hover()"
+>
+  @if (title() || subtitle()) {
+    <div class="px-6 py-4 border-b border-gray-50 dark:border-slate-800">
+      <h3 class="text-lg font-bold text-gray-900 dark:text-white">{{ title() }}</h3>
+      @if (subtitle()) {
+        <p class="text-sm text-gray-500 dark:text-slate-400">{{ subtitle() }}</p>
+      }
+    </div>
+  }
+
+  <div [class.p-6]="padding()">
+    <ng-content></ng-content>
+  </div>
+
+  @if (hasActions()) {
+    <div class="px-6 py-3 bg-gray-50/50 dark:bg-slate-800/50 flex items-center justify-end gap-2">
+      <ng-content select="[card-actions]"></ng-content>
+    </div>
+  }
+</div>
